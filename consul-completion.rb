@@ -7,11 +7,11 @@ class ConsulCompletion < Formula
   bottle :unneeded
 
   def install
-    bash_completion.install "consul-completion.sh"
+    bash_completion.install "consul"
   end
 
   test do
-    assert_match "-F _docker",
+    assert_match "-F _consul",
       shell_output("bash -c 'source #{bash_completion}/consul && complete -p consul'")
   end
 end
